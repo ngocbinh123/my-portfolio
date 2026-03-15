@@ -12,11 +12,7 @@ on:
   project_card:
     types: [created, moved, converted, edited, deleted]
 
-  # 3. When project v2 items change (new GitHub Projects)
-  projects_v2_item:
-    types: [created, edited, deleted, archived, restored, reordered]
-
-  # 4. Manual trigger for testing
+  # 3. Manual trigger for testing
   workflow_dispatch:
 
 # ============================================================
