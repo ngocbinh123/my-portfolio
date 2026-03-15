@@ -1,0 +1,1 @@
+claude update && ck update && ck init --kit engineer && ck init -g --kit engineer
