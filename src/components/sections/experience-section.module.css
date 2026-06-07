@@ -1,0 +1,103 @@
+.section {
+  background: var(--bg-surface);
+}
+
+.timeline {
+  margin: 0;
+  margin-top: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Row: dot column + content. Stretch so the connector line can fill height. */
+.item {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-lg);
+}
+
+/* Vertical rail: centered dot on top, gradient line filling remaining height. */
+.dotColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  margin-top: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+.line {
+  width: 2px;
+  flex: 1 1 auto;
+  margin-top: var(--space-xs);
+  background: var(--gradient-accent);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-2xl);
+  min-width: 0; /* allow text wrap, no overflow */
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--accent-cyan);
+}
+
+.company {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 3vw, 22px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.role {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.bullets {
+  margin: 0;
+  margin-top: var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Custom "•" marker so plain-string bullets line up with hanging indent. */
+.bullet {
+  position: relative;
+  padding-left: var(--space-md);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.bullet::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-cyan);
+}
+
+/* Mobile: tighten horizontal rhythm, keep timeline readable. */
+@media (max-width: 640px) {
+  .item {
+    gap: var(--space-md);
+  }
+}

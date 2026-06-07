@@ -1,0 +1,74 @@
+/* Design tokens from design/design-system.lib.pen — dark (default) + light themes.
+   Themed values switch via [data-theme] on <html>. Brand accents are identical in both. */
+
+:root,
+:root[data-theme="dark"] {
+  /* Surfaces */
+  --bg-primary: #0a0f1c;
+  --bg-secondary: #1e293b;
+  --bg-surface: #0f172a;
+  --border-default: #1e293b;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #7c8aa1;
+
+  /* Elevation */
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --nav-bg: rgba(10, 15, 28, 0.8);
+}
+
+:root[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-surface: #f1f5f9;
+  --border-default: #e2e8f0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #586577;
+
+  /* Deeper cyan so solid cyan text/icons stay readable on light surfaces
+     (the brand gradient keeps the vivid #22d3ee via --gradient-accent). */
+  --accent-cyan: #0e7490;
+
+  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --nav-bg: rgba(248, 250, 252, 0.8);
+}
+
+:root {
+  /* Brand accents (theme-independent) */
+  --accent-cyan: #22d3ee;
+  --accent-violet: #7c3aed;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --gradient-accent: linear-gradient(135deg, #22d3ee 0%, #7c3aed 100%);
+
+  /* Typography */
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 100px;
+
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --nav-height: 68px;
+}

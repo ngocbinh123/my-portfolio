@@ -1,0 +1,35 @@
+/* Skills / tech-stack section. Vertical padding comes from global .section. */
+
+.skills {
+  background: var(--bg-primary);
+}
+
+/* Vertical stack of skill groups */
+.groups {
+  margin-top: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Category label: mono, small, tracked-out caps. Color set inline per group. */
+.category {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Wrapping row of chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}

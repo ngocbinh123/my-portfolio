@@ -1,0 +1,52 @@
+/* About section: two-column bio + stats grid below the header. */
+.about {
+  background: var(--bg-primary);
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-2xl);
+  margin-top: var(--space-2xl);
+}
+
+/* ---- Bio column ---- */
+.bio {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 640px;
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ---- Stats column ---- */
+.stats {
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ---- Responsive: stack below 900px, stats stay 2 columns ---- */
+@media (max-width: 900px) {
+  .body {
+    flex-direction: column;
+  }
+
+  .bio {
+    max-width: 100%;
+  }
+
+  .stats {
+    max-width: 100%;
+  }
+}

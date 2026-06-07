@@ -1,0 +1,90 @@
+/* Featured-projects section. Vertical padding comes from global .section. */
+
+.projects {
+  background: var(--bg-surface);
+}
+
+/* Responsive card grid: 3 cols desktop, 2 tablet, 1 mobile */
+.grid {
+  margin-top: var(--space-2xl);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project card */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--accent-cyan);
+}
+
+/* Fixed-height cover image block */
+.media {
+  height: 200px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Subtle cover zoom on card hover for a polished feel */
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+/* Card body — flex:1 keeps tags bottom-aligned across uneven copy lengths */
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: 20px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.tags {
+  margin-top: auto;
+  padding-top: var(--space-xs);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}

@@ -1,0 +1,37 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-cyan);
+}
+
+/* Neutral chips use a cyan icon by default */
+.icon {
+  color: var(--accent-cyan);
+}
+
+/* Trending chips: tinted via inline style on the theme surface */
+.accented {
+  background: var(--bg-secondary);
+  border-width: 1.5px;
+  font-weight: 600;
+}
+
+.accented:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
