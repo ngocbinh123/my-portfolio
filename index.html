@@ -4,7 +4,35 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-portfolio-temp</title>
+    <meta name="description" content="Nguyen Ngoc Binh — Senior Mobile Solution Developer. 10+ years building mobile experiences with design thinking & AI." />
+    <title>Nguyen Ngoc Binh — Senior Mobile Solution Developer</title>
+
+    <!-- Fonts: Inter (UI) + JetBrains Mono (code accents) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Set theme before paint to avoid flash of wrong theme. -->
+    <script type="text/javascript">
+      (function () {
+        try {
+          var saved = localStorage.getItem('portfolio-theme');
+          var theme =
+            saved === 'dark' || saved === 'light'
+              ? saved
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
     <!--
       GitHub Pages SPA redirect decoder. Restores the original route encoded by
       404.html (the '/?/path' query form) into the real URL via history.replaceState

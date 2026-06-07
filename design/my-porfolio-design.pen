@@ -1,5 +1,5 @@
 {
-  "version": "2.8",
+  "version": "2.13",
   "children": [
     {
       "type": "frame",
@@ -27,7 +27,6 @@
           }
         ]
       },
-      "cornerRadius": "$radius-md",
       "gap": 8,
       "padding": [
         14,
@@ -55,11 +54,9 @@
       "y": 80,
       "name": "Component/Button/Outline",
       "reusable": true,
-      "cornerRadius": "$radius-md",
-      "stroke": {
-        "thickness": 1.5,
-        "fill": "#22D3EE"
-      },
+      "stroke": "#22D3EE",
+      "strokeWidth": 1.5,
+      "strokeAlignment": "inner",
       "gap": 8,
       "padding": [
         14,
@@ -121,7 +118,7 @@
           "type": "text",
           "id": "xgCd0",
           "name": "title",
-          "fill": "$text-primary",
+          "fill": "#FFFFFF",
           "content": "Section Title",
           "fontFamily": "Inter",
           "fontSize": 36,
@@ -131,12 +128,13 @@
           "type": "text",
           "id": "iLk87",
           "name": "subtitle",
-          "fill": "$text-secondary",
+          "fill": "#94A3B8",
           "textGrowth": "fixed-width",
           "width": 500,
           "content": "A brief description of this section",
           "fontFamily": "Inter",
-          "fontSize": 18
+          "fontSize": 18,
+          "fontWeight": "normal"
         }
       ]
     },
@@ -147,12 +145,11 @@
       "y": 400,
       "name": "Component/SkillChip",
       "reusable": true,
-      "fill": "$bg-surface",
+      "fill": "#0F172A",
       "cornerRadius": 100,
-      "stroke": {
-        "thickness": 1,
-        "fill": "$border-default"
-      },
+      "stroke": "#1E293B",
+      "strokeWidth": 1,
+      "strokeAlignment": "inner",
       "gap": 6,
       "padding": [
         6,
@@ -161,20 +158,20 @@
       "alignItems": "center",
       "children": [
         {
-          "type": "icon_font",
+          "type": "icon",
           "id": "6Ly5S",
           "name": "icon",
           "width": 14,
           "height": 14,
-          "iconFontName": "code",
-          "iconFontFamily": "lucide",
+          "icon": "code",
+          "library": "lucide",
           "fill": "#22D3EE"
         },
         {
           "type": "text",
           "id": "Nbd2m",
           "name": "label",
-          "fill": "$text-primary",
+          "fill": "#FFFFFF",
           "content": "Kotlin",
           "fontFamily": "JetBrains Mono",
           "fontSize": 13,
@@ -190,8 +187,7 @@
       "name": "Component/StatCard",
       "reusable": true,
       "width": 200,
-      "fill": "$bg-secondary",
-      "cornerRadius": "$radius-lg",
+      "fill": "#1E293B",
       "layout": "vertical",
       "gap": 4,
       "padding": [
@@ -233,7 +229,7 @@
           "type": "text",
           "id": "Ohvm7",
           "name": "label",
-          "fill": "$text-secondary",
+          "fill": "#94A3B8",
           "content": "Velocity Improvement",
           "textAlign": "center",
           "fontFamily": "Inter",
@@ -319,7 +315,7 @@
               "type": "text",
               "id": "SiG50",
               "name": "company",
-              "fill": "$text-primary",
+              "fill": "#FFFFFF",
               "content": "Giao Hang Nhanh",
               "fontFamily": "Inter",
               "fontSize": 22,
@@ -329,7 +325,7 @@
               "type": "text",
               "id": "kyCyV",
               "name": "role",
-              "fill": "$text-secondary",
+              "fill": "#94A3B8",
               "content": "Senior Mobile Solution Developer",
               "fontFamily": "Inter",
               "fontSize": 15,
@@ -339,13 +335,14 @@
               "type": "text",
               "id": "SYIzs",
               "name": "description",
-              "fill": "$text-muted",
+              "fill": "#64748B",
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "Led Scrum events, built CI/CD pipelines, designed scalable systems for 20,000+ users",
               "lineHeight": 1.5,
               "fontFamily": "Inter",
-              "fontSize": 14
+              "fontSize": 14,
+              "fontWeight": "normal"
             }
           ]
         }
@@ -360,8 +357,7 @@
       "reusable": true,
       "clip": true,
       "width": 360,
-      "fill": "$bg-secondary",
-      "cornerRadius": "$radius-lg",
+      "fill": "#1E293B",
       "layout": "vertical",
       "children": [
         {
@@ -396,7 +392,7 @@
               "type": "text",
               "id": "zWJb5",
               "name": "title",
-              "fill": "$text-primary",
+              "fill": "#FFFFFF",
               "content": "GHN Messaging System",
               "fontFamily": "Inter",
               "fontSize": 18,
@@ -406,13 +402,14 @@
               "type": "text",
               "id": "J7as4",
               "name": "description",
-              "fill": "$text-secondary",
+              "fill": "#94A3B8",
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "Real-time messaging platform for 20,000+ users with scalable architecture",
               "lineHeight": 1.5,
               "fontFamily": "Inter",
-              "fontSize": 14
+              "fontSize": 14,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
@@ -457,13 +454,10 @@
       "name": "Component/CertCard",
       "reusable": true,
       "width": 340,
-      "fill": "$bg-secondary",
-      "cornerRadius": "$radius-md",
-      "stroke": {
-        "align": "inside",
-        "thickness": 1,
-        "fill": "$border-default"
-      },
+      "fill": "#1E293B",
+      "stroke": "#1E293B",
+      "strokeWidth": 1,
+      "strokeAlignment": "inner",
       "gap": 16,
       "padding": [
         16,
@@ -477,8 +471,7 @@
           "name": "logo",
           "width": 48,
           "height": 48,
-          "fill": "$bg-surface",
-          "cornerRadius": "$radius-sm"
+          "fill": "#0F172A"
         },
         {
           "type": "frame",
@@ -492,7 +485,7 @@
               "type": "text",
               "id": "83N7P",
               "name": "name",
-              "fill": "$text-primary",
+              "fill": "#FFFFFF",
               "content": "Meta iOS Developer",
               "fontFamily": "Inter",
               "fontSize": 15,
@@ -502,22 +495,23 @@
               "type": "text",
               "id": "IihAG",
               "name": "issuer",
-              "fill": "$text-muted",
+              "fill": "#64748B",
               "content": "Meta / Coursera · 2024",
               "fontFamily": "Inter",
-              "fontSize": 12
+              "fontSize": 12,
+              "fontWeight": "normal"
             }
           ]
         },
         {
-          "type": "icon_font",
+          "type": "icon",
           "id": "D5vhs",
           "name": "link-icon",
           "width": 16,
           "height": 16,
-          "iconFontName": "external-link",
-          "iconFontFamily": "lucide",
-          "fill": "$text-muted"
+          "icon": "external-link",
+          "library": "lucide",
+          "fill": "#64748B"
         }
       ]
     },
@@ -603,7 +597,7 @@
               "type": "text",
               "id": "Y1uD9",
               "name": "link-about",
-              "fill": "$text-secondary",
+              "fill": "#94A3B8",
               "content": "About",
               "fontFamily": "Inter",
               "fontSize": 14,
@@ -613,7 +607,7 @@
               "type": "text",
               "id": "hcIFE",
               "name": "link-exp",
-              "fill": "$text-secondary",
+              "fill": "#94A3B8",
               "content": "Experience",
               "fontFamily": "Inter",
               "fontSize": 14,
@@ -623,7 +617,7 @@
               "type": "text",
               "id": "l3yOU",
               "name": "link-skills",
-              "fill": "$text-secondary",
+              "fill": "#94A3B8",
               "content": "Skills",
               "fontFamily": "Inter",
               "fontSize": 14,
@@ -633,7 +627,7 @@
               "type": "text",
               "id": "UumIb",
               "name": "link-projects",
-              "fill": "$text-secondary",
+              "fill": "#94A3B8",
               "content": "Projects",
               "fontFamily": "Inter",
               "fontSize": 14,
@@ -643,7 +637,7 @@
               "type": "text",
               "id": "qqAT8",
               "name": "link-contact",
-              "fill": "$text-secondary",
+              "fill": "#94A3B8",
               "content": "Contact",
               "fontFamily": "Inter",
               "fontSize": 14,
@@ -680,8 +674,11 @@
       "x": 0,
       "y": 0,
       "name": "Portfolio Landing Page",
+      "theme": {
+        "mode": "dark"
+      },
       "width": 1440,
-      "fill": "$bg-primary",
+      "fill": "#0A0F1C",
       "layout": "vertical",
       "children": [
         {
@@ -774,12 +771,11 @@
                   "type": "frame",
                   "id": "0l6lj",
                   "name": "badge",
-                  "fill": "$bg-surface",
+                  "fill": "#0F172A",
                   "cornerRadius": 100,
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#22D3EE33"
-                  },
+                  "stroke": "#22D3EE33",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "gap": 8,
                   "padding": [
                     8,
@@ -811,7 +807,7 @@
                   "type": "text",
                   "id": "BrgKS",
                   "name": "name",
-                  "fill": "$text-primary",
+                  "fill": "#FFFFFF",
                   "content": "Nguyen Ngoc Binh",
                   "fontFamily": "Inter",
                   "fontSize": 72,
@@ -849,13 +845,14 @@
                   "type": "text",
                   "id": "wpGTt",
                   "name": "tagline",
-                  "fill": "$text-secondary",
+                  "fill": "#94A3B8",
                   "textGrowth": "fixed-width",
                   "width": 600,
                   "content": "Building Mobile Experiences with Design Thinking & AI",
                   "lineHeight": 1.6,
                   "fontFamily": "Inter",
-                  "fontSize": 20
+                  "fontSize": 20,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -910,32 +907,31 @@
                   "fill": {
                     "type": "image",
                     "enabled": true,
-                    "url": "./images/generated-1772982414332.png",
+                    "url": "images/generated-1772982414332.png",
                     "mode": "fill"
                   },
                   "cornerRadius": 160,
                   "stroke": {
-                    "thickness": 2,
-                    "fill": {
-                      "type": "gradient",
-                      "gradientType": "linear",
-                      "enabled": true,
-                      "rotation": 135,
-                      "size": {
-                        "height": 1
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 135,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#22D3EE",
+                        "position": 0
                       },
-                      "colors": [
-                        {
-                          "color": "#22D3EE",
-                          "position": 0
-                        },
-                        {
-                          "color": "#7C3AED",
-                          "position": 1
-                        }
-                      ]
-                    }
-                  }
+                      {
+                        "color": "#7C3AED",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner"
                 }
               ]
             }
@@ -945,6 +941,9 @@
           "type": "frame",
           "id": "UVETS",
           "name": "About Section",
+          "theme": {
+            "mode": "dark"
+          },
           "width": "fill_container",
           "layout": "vertical",
           "gap": 48,
@@ -978,13 +977,14 @@
                   "type": "text",
                   "id": "WJrog",
                   "name": "bio",
-                  "fill": "$text-secondary",
+                  "fill": "#94A3B8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "With 10+ years of experience in mobile development, I bridge the gap between design and engineering. My background in Graphic Design and UX combined with deep technical expertise in Kotlin, Swift, and cross-platform frameworks allows me to build products that are both beautiful and performant.\n\nCurrently at Giao Hang Nhanh, I lead mobile initiatives that serve 20,000+ users, building scalable architectures and leveraging AI tools to accelerate development workflows.",
                   "lineHeight": 1.7,
                   "fontFamily": "Inter",
-                  "fontSize": 16
+                  "fontSize": 16,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -1083,7 +1083,7 @@
           "id": "SAtHG",
           "name": "AI-First Mindset Section",
           "width": "fill_container",
-          "fill": "$bg-surface",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 48,
           "padding": [
@@ -1117,12 +1117,10 @@
                   "id": "Od8P4",
                   "name": "card-claude",
                   "width": "fill_container",
-                  "fill": "$bg-secondary",
-                  "cornerRadius": "$radius-lg",
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#22D3EE22"
-                  },
+                  "fill": "#1E293B",
+                  "stroke": "#22D3EE22",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
@@ -1131,20 +1129,20 @@
                   ],
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "cWn4N",
                       "name": "icon",
                       "width": 32,
                       "height": 32,
-                      "iconFontName": "terminal",
-                      "iconFontFamily": "lucide",
+                      "icon": "terminal",
+                      "library": "lucide",
                       "fill": "#22D3EE"
                     },
                     {
                       "type": "text",
                       "id": "UllqJ",
                       "name": "title",
-                      "fill": "$text-primary",
+                      "fill": "#FFFFFF",
                       "content": "Claude Code",
                       "fontFamily": "Inter",
                       "fontSize": 18,
@@ -1154,13 +1152,14 @@
                       "type": "text",
                       "id": "ugQPb",
                       "name": "desc",
-                      "fill": "$text-secondary",
+                      "fill": "#94A3B8",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "AI-powered pair programming for architecture design, code review, and automated testing workflows",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1169,12 +1168,10 @@
                   "id": "VHMTi",
                   "name": "card-cursor",
                   "width": "fill_container",
-                  "fill": "$bg-secondary",
-                  "cornerRadius": "$radius-lg",
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#7C3AED22"
-                  },
+                  "fill": "#1E293B",
+                  "stroke": "#7C3AED22",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
@@ -1183,20 +1180,20 @@
                   ],
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "kRQ3i",
                       "name": "icon",
                       "width": 32,
                       "height": 32,
-                      "iconFontName": "code",
-                      "iconFontFamily": "lucide",
+                      "icon": "code",
+                      "library": "lucide",
                       "fill": "#7C3AED"
                     },
                     {
                       "type": "text",
                       "id": "CwVoQ",
                       "name": "title",
-                      "fill": "$text-primary",
+                      "fill": "#FFFFFF",
                       "content": "Cursor IDE",
                       "fontFamily": "Inter",
                       "fontSize": 18,
@@ -1206,13 +1203,14 @@
                       "type": "text",
                       "id": "qTUzx",
                       "name": "desc",
-                      "fill": "$text-secondary",
+                      "fill": "#94A3B8",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "AI-native IDE for rapid prototyping, intelligent code completion, and context-aware refactoring",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1221,12 +1219,10 @@
                   "id": "Mm6us",
                   "name": "card-gemini",
                   "width": "fill_container",
-                  "fill": "$bg-secondary",
-                  "cornerRadius": "$radius-lg",
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#F59E0B22"
-                  },
+                  "fill": "#1E293B",
+                  "stroke": "#F59E0B22",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
@@ -1235,20 +1231,20 @@
                   ],
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "dVmv4",
                       "name": "icon",
                       "width": 32,
                       "height": 32,
-                      "iconFontName": "brain",
-                      "iconFontFamily": "lucide",
+                      "icon": "brain",
+                      "library": "lucide",
                       "fill": "#F59E0B"
                     },
                     {
                       "type": "text",
                       "id": "TyGoo",
                       "name": "title",
-                      "fill": "$text-primary",
+                      "fill": "#FFFFFF",
                       "content": "Gemini & ChatGPT",
                       "fontFamily": "Inter",
                       "fontSize": 18,
@@ -1258,13 +1254,14 @@
                       "type": "text",
                       "id": "xuKg4",
                       "name": "desc",
-                      "fill": "$text-secondary",
+                      "fill": "#94A3B8",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Multi-model approach for research, documentation, problem-solving, and development acceleration",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -1276,8 +1273,11 @@
           "type": "frame",
           "id": "HqQcH",
           "name": "Experience Section",
+          "theme": {
+            "mode": "dark"
+          },
           "width": "fill_container",
-          "fill": "$bg-surface",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 48,
           "padding": [
@@ -1462,10 +1462,9 @@
                           "name": "chip-kmp",
                           "fill": "#1E293B",
                           "cornerRadius": 100,
-                          "stroke": {
-                            "thickness": 1.5,
-                            "fill": "#F59E0B"
-                          },
+                          "stroke": "#F59E0B",
+                          "strokeWidth": 1.5,
+                          "strokeAlignment": "inner",
                           "gap": 6,
                           "padding": [
                             6,
@@ -1474,13 +1473,13 @@
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
+                              "type": "icon",
                               "id": "j37i3",
                               "name": "icon",
                               "width": 14,
                               "height": 14,
-                              "iconFontName": "smartphone",
-                              "iconFontFamily": "lucide",
+                              "icon": "smartphone",
+                              "library": "lucide",
                               "fill": "#F59E0B"
                             },
                             {
@@ -1501,10 +1500,9 @@
                           "name": "chip-rn",
                           "fill": "#1E293B",
                           "cornerRadius": 100,
-                          "stroke": {
-                            "thickness": 1.5,
-                            "fill": "#F59E0B"
-                          },
+                          "stroke": "#F59E0B",
+                          "strokeWidth": 1.5,
+                          "strokeAlignment": "inner",
                           "gap": 6,
                           "padding": [
                             6,
@@ -1513,13 +1511,13 @@
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
+                              "type": "icon",
                               "id": "WKBM7",
                               "name": "icon",
                               "width": 14,
                               "height": 14,
-                              "iconFontName": "code",
-                              "iconFontFamily": "lucide",
+                              "icon": "code",
+                              "library": "lucide",
                               "fill": "#F59E0B"
                             },
                             {
@@ -1540,10 +1538,9 @@
                           "name": "chip-swiftui",
                           "fill": "#1E293B",
                           "cornerRadius": 100,
-                          "stroke": {
-                            "thickness": 1.5,
-                            "fill": "#F59E0B"
-                          },
+                          "stroke": "#F59E0B",
+                          "strokeWidth": 1.5,
+                          "strokeAlignment": "inner",
                           "gap": 6,
                           "padding": [
                             6,
@@ -1552,13 +1549,13 @@
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
+                              "type": "icon",
                               "id": "2sAIb",
                               "name": "icon",
                               "width": 14,
                               "height": 14,
-                              "iconFontName": "monitor-smartphone",
-                              "iconFontFamily": "lucide",
+                              "icon": "monitor-smartphone",
+                              "library": "lucide",
                               "fill": "#F59E0B"
                             },
                             {
@@ -1579,10 +1576,9 @@
                           "name": "chip-compose",
                           "fill": "#1E293B",
                           "cornerRadius": 100,
-                          "stroke": {
-                            "thickness": 1.5,
-                            "fill": "#F59E0B"
-                          },
+                          "stroke": "#F59E0B",
+                          "strokeWidth": 1.5,
+                          "strokeAlignment": "inner",
                           "gap": 6,
                           "padding": [
                             6,
@@ -1591,13 +1587,13 @@
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
+                              "type": "icon",
                               "id": "D9moT",
                               "name": "icon",
                               "width": 14,
                               "height": 14,
-                              "iconFontName": "layers",
-                              "iconFontFamily": "lucide",
+                              "icon": "layers",
+                              "library": "lucide",
                               "fill": "#F59E0B"
                             },
                             {
@@ -1618,10 +1614,9 @@
                           "name": "chip-ai",
                           "fill": "#1E293B",
                           "cornerRadius": 100,
-                          "stroke": {
-                            "thickness": 1.5,
-                            "fill": "#F59E0B"
-                          },
+                          "stroke": "#F59E0B",
+                          "strokeWidth": 1.5,
+                          "strokeAlignment": "inner",
                           "gap": 6,
                           "padding": [
                             6,
@@ -1630,13 +1625,13 @@
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
+                              "type": "icon",
                               "id": "TbHtd",
                               "name": "icon",
                               "width": 14,
                               "height": 14,
-                              "iconFontName": "brain",
-                              "iconFontFamily": "lucide",
+                              "icon": "brain",
+                              "library": "lucide",
                               "fill": "#F59E0B"
                             },
                             {
@@ -1936,7 +1931,7 @@
           "id": "46LDQ",
           "name": "Projects Section",
           "width": "fill_container",
-          "fill": "$bg-surface",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 48,
           "padding": [
@@ -2314,7 +2309,7 @@
           "id": "NeoMr",
           "name": "Footer",
           "width": "fill_container",
-          "fill": "$bg-secondary",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 24,
           "padding": [
@@ -2331,44 +2326,44 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "EItOP",
                   "name": "linkedin",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "linkedin",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "linkedin",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 },
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "qm8wk",
                   "name": "github",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "github",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "github",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 },
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "DsloM",
                   "name": "email",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "mail",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "mail",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 },
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "oWGMJ",
                   "name": "phone",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "phone",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "phone",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 }
               ]
             },
@@ -2376,7 +2371,7 @@
               "type": "rectangle",
               "id": "WkpGX",
               "name": "divider",
-              "fill": "$border-default",
+              "fill": "#1E293B",
               "width": "fill_container",
               "height": 1
             },
@@ -2384,11 +2379,12 @@
               "type": "text",
               "id": "F97BH",
               "name": "copyright",
-              "fill": "$text-muted",
+              "fill": "#94A3B8",
               "content": "© 2026 Nguyen Ngoc Binh. Built with passion & code.",
               "textAlign": "center",
               "fontFamily": "Inter",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             }
           ]
         }
@@ -3078,7 +3074,7 @@
       "y": 0,
       "name": "Portfolio - iPad (768px)",
       "width": 768,
-      "fill": "$bg-primary",
+      "fill": "#1E293B",
       "layout": "vertical",
       "children": [
         {
@@ -3175,12 +3171,11 @@
                   "type": "frame",
                   "id": "i8LDx",
                   "name": "badge",
-                  "fill": "$bg-surface",
+                  "fill": "#1E293B",
                   "cornerRadius": 100,
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#22D3EE33"
-                  },
+                  "stroke": "#22D3EE33",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "gap": 8,
                   "padding": [
                     8,
@@ -3212,7 +3207,7 @@
                   "type": "text",
                   "id": "s83Nr",
                   "name": "name",
-                  "fill": "$text-primary",
+                  "fill": "#FFFFFF",
                   "content": "Nguyen Ngoc Binh",
                   "fontFamily": "Inter",
                   "fontSize": 72,
@@ -3250,13 +3245,14 @@
                   "type": "text",
                   "id": "2d7ed",
                   "name": "tagline",
-                  "fill": "$text-secondary",
+                  "fill": "#FFFFFF",
                   "textGrowth": "fixed-width",
                   "width": 600,
                   "content": "Building Mobile Experiences with Design Thinking & AI",
                   "lineHeight": 1.6,
                   "fontFamily": "Inter",
-                  "fontSize": 20
+                  "fontSize": 20,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -3311,32 +3307,31 @@
                   "fill": {
                     "type": "image",
                     "enabled": true,
-                    "url": "./images/generated-1772982414332.png",
+                    "url": "images/generated-1772982414332.png",
                     "mode": "fill"
                   },
                   "cornerRadius": 120,
                   "stroke": {
-                    "thickness": 2,
-                    "fill": {
-                      "type": "gradient",
-                      "gradientType": "linear",
-                      "enabled": true,
-                      "rotation": 135,
-                      "size": {
-                        "height": 1
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 135,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#22D3EE",
+                        "position": 0
                       },
-                      "colors": [
-                        {
-                          "color": "#22D3EE",
-                          "position": 0
-                        },
-                        {
-                          "color": "#7C3AED",
-                          "position": 1
-                        }
-                      ]
-                    }
-                  }
+                      {
+                        "color": "#7C3AED",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner"
                 }
               ]
             }
@@ -3381,13 +3376,14 @@
                   "type": "text",
                   "id": "Fr4NQ",
                   "name": "bio",
-                  "fill": "$text-secondary",
+                  "fill": "#94A3B8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "With 10+ years of experience in mobile development, I bridge the gap between design and engineering. My background in Graphic Design and UX combined with deep technical expertise in Kotlin, Swift, and cross-platform frameworks allows me to build products that are both beautiful and performant.\n\nCurrently at Giao Hang Nhanh, I lead mobile initiatives that serve 20,000+ users, building scalable architectures and leveraging AI tools to accelerate development workflows.",
                   "lineHeight": 1.7,
                   "fontFamily": "Inter",
-                  "fontSize": 16
+                  "fontSize": 16,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -3485,7 +3481,7 @@
           "id": "wBAaB",
           "name": "AI-First Mindset Section",
           "width": "fill_container",
-          "fill": "$bg-surface",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 48,
           "padding": [
@@ -3521,12 +3517,10 @@
                   "id": "8sZfi",
                   "name": "card-claude",
                   "width": "fill_container",
-                  "fill": "$bg-secondary",
-                  "cornerRadius": "$radius-lg",
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#22D3EE22"
-                  },
+                  "fill": "#1E293B",
+                  "stroke": "#22D3EE22",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
@@ -3535,20 +3529,20 @@
                   ],
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "Crhjk",
                       "name": "icon",
                       "width": 32,
                       "height": 32,
-                      "iconFontName": "terminal",
-                      "iconFontFamily": "lucide",
+                      "icon": "terminal",
+                      "library": "lucide",
                       "fill": "#22D3EE"
                     },
                     {
                       "type": "text",
                       "id": "hcyi7",
                       "name": "title",
-                      "fill": "$text-primary",
+                      "fill": "#FFFFFF",
                       "content": "Claude Code",
                       "fontFamily": "Inter",
                       "fontSize": 18,
@@ -3558,13 +3552,14 @@
                       "type": "text",
                       "id": "UDxfz",
                       "name": "desc",
-                      "fill": "$text-secondary",
+                      "fill": "#94A3B8",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "AI-powered pair programming for architecture design, code review, and automated testing workflows",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -3573,12 +3568,10 @@
                   "id": "V3cav",
                   "name": "card-cursor",
                   "width": "fill_container",
-                  "fill": "$bg-secondary",
-                  "cornerRadius": "$radius-lg",
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#7C3AED22"
-                  },
+                  "fill": "#1E293B",
+                  "stroke": "#7C3AED22",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
@@ -3587,20 +3580,20 @@
                   ],
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "kGp0Q",
                       "name": "icon",
                       "width": 32,
                       "height": 32,
-                      "iconFontName": "code",
-                      "iconFontFamily": "lucide",
+                      "icon": "code",
+                      "library": "lucide",
                       "fill": "#7C3AED"
                     },
                     {
                       "type": "text",
                       "id": "zKQCp",
                       "name": "title",
-                      "fill": "$text-primary",
+                      "fill": "#FFFFFF",
                       "content": "Cursor IDE",
                       "fontFamily": "Inter",
                       "fontSize": 18,
@@ -3610,13 +3603,14 @@
                       "type": "text",
                       "id": "HkJEO",
                       "name": "desc",
-                      "fill": "$text-secondary",
+                      "fill": "#94A3B8",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "AI-native IDE for rapid prototyping, intelligent code completion, and context-aware refactoring",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -3625,12 +3619,10 @@
                   "id": "bvWZq",
                   "name": "card-gemini",
                   "width": "fill_container",
-                  "fill": "$bg-secondary",
-                  "cornerRadius": "$radius-lg",
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#F59E0B22"
-                  },
+                  "fill": "#1E293B",
+                  "stroke": "#F59E0B22",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
@@ -3639,20 +3631,20 @@
                   ],
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "ak4X8",
                       "name": "icon",
                       "width": 32,
                       "height": 32,
-                      "iconFontName": "brain",
-                      "iconFontFamily": "lucide",
+                      "icon": "brain",
+                      "library": "lucide",
                       "fill": "#F59E0B"
                     },
                     {
                       "type": "text",
                       "id": "58kha",
                       "name": "title",
-                      "fill": "$text-primary",
+                      "fill": "#FFFFFF",
                       "content": "Gemini & ChatGPT",
                       "fontFamily": "Inter",
                       "fontSize": 18,
@@ -3662,13 +3654,14 @@
                       "type": "text",
                       "id": "rRRPR",
                       "name": "desc",
-                      "fill": "$text-secondary",
+                      "fill": "#94A3B8",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Multi-model approach for research, documentation, problem-solving, and development acceleration",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -3681,7 +3674,7 @@
           "id": "v4wti",
           "name": "Experience Section",
           "width": "fill_container",
-          "fill": "$bg-surface",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 48,
           "padding": [
@@ -3879,10 +3872,9 @@
                               "name": "chip-kmp",
                               "fill": "#1E293B",
                               "cornerRadius": 100,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "#F59E0B"
-                              },
+                              "stroke": "#F59E0B",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "gap": 6,
                               "padding": [
                                 6,
@@ -3891,13 +3883,13 @@
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
+                                  "type": "icon",
                                   "id": "mz3Xs",
                                   "name": "icon",
                                   "width": 14,
                                   "height": 14,
-                                  "iconFontName": "smartphone",
-                                  "iconFontFamily": "lucide",
+                                  "icon": "smartphone",
+                                  "library": "lucide",
                                   "fill": "#F59E0B"
                                 },
                                 {
@@ -3918,10 +3910,9 @@
                               "name": "chip-rn",
                               "fill": "#1E293B",
                               "cornerRadius": 100,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "#F59E0B"
-                              },
+                              "stroke": "#F59E0B",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "gap": 6,
                               "padding": [
                                 6,
@@ -3930,13 +3921,13 @@
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
+                                  "type": "icon",
                                   "id": "GYQrT",
                                   "name": "icon",
                                   "width": 14,
                                   "height": 14,
-                                  "iconFontName": "code",
-                                  "iconFontFamily": "lucide",
+                                  "icon": "code",
+                                  "library": "lucide",
                                   "fill": "#F59E0B"
                                 },
                                 {
@@ -3957,10 +3948,9 @@
                               "name": "chip-swiftui",
                               "fill": "#1E293B",
                               "cornerRadius": 100,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "#F59E0B"
-                              },
+                              "stroke": "#F59E0B",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "gap": 6,
                               "padding": [
                                 6,
@@ -3969,13 +3959,13 @@
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
+                                  "type": "icon",
                                   "id": "681s9",
                                   "name": "icon",
                                   "width": 14,
                                   "height": 14,
-                                  "iconFontName": "monitor-smartphone",
-                                  "iconFontFamily": "lucide",
+                                  "icon": "monitor-smartphone",
+                                  "library": "lucide",
                                   "fill": "#F59E0B"
                                 },
                                 {
@@ -4005,10 +3995,9 @@
                               "name": "chip-compose",
                               "fill": "#1E293B",
                               "cornerRadius": 100,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "#F59E0B"
-                              },
+                              "stroke": "#F59E0B",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "gap": 6,
                               "padding": [
                                 6,
@@ -4017,13 +4006,13 @@
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
+                                  "type": "icon",
                                   "id": "lyYKt",
                                   "name": "icon",
                                   "width": 14,
                                   "height": 14,
-                                  "iconFontName": "layers",
-                                  "iconFontFamily": "lucide",
+                                  "icon": "layers",
+                                  "library": "lucide",
                                   "fill": "#F59E0B"
                                 },
                                 {
@@ -4044,10 +4033,9 @@
                               "name": "chip-ai",
                               "fill": "#1E293B",
                               "cornerRadius": 100,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "#F59E0B"
-                              },
+                              "stroke": "#F59E0B",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "gap": 6,
                               "padding": [
                                 6,
@@ -4056,13 +4044,13 @@
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
+                                  "type": "icon",
                                   "id": "4NlDN",
                                   "name": "icon",
                                   "width": 14,
                                   "height": 14,
-                                  "iconFontName": "brain",
-                                  "iconFontFamily": "lucide",
+                                  "icon": "brain",
+                                  "library": "lucide",
                                   "fill": "#F59E0B"
                                 },
                                 {
@@ -4386,7 +4374,7 @@
           "id": "fYcNZ",
           "name": "Projects Section",
           "width": "fill_container",
-          "fill": "$bg-surface",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 48,
           "padding": [
@@ -4768,7 +4756,7 @@
           "id": "a8P6E",
           "name": "Footer",
           "width": "fill_container",
-          "fill": "$bg-secondary",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 24,
           "padding": [
@@ -4785,44 +4773,44 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "LSQeK",
                   "name": "linkedin",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "linkedin",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "linkedin",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 },
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "BS3wt",
                   "name": "github",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "github",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "github",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 },
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "ifE6L",
                   "name": "email",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "mail",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "mail",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 },
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "nNIZB",
                   "name": "phone",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "phone",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "phone",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 }
               ]
             },
@@ -4830,7 +4818,7 @@
               "type": "rectangle",
               "id": "3mo8z",
               "name": "divider",
-              "fill": "$border-default",
+              "fill": "#1E293B",
               "width": "fill_container",
               "height": 1
             },
@@ -4838,11 +4826,12 @@
               "type": "text",
               "id": "5Swxf",
               "name": "copyright",
-              "fill": "$text-muted",
+              "fill": "#94A3B8",
               "content": "© 2026 Nguyen Ngoc Binh. Built with passion & code.",
               "textAlign": "center",
               "fontFamily": "Inter",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             }
           ]
         }
@@ -4855,7 +4844,7 @@
       "y": 0,
       "name": "Portfolio - Mobile (375px)",
       "width": 375,
-      "fill": "$bg-primary",
+      "fill": "#1E293B",
       "layout": "vertical",
       "children": [
         {
@@ -4963,12 +4952,11 @@
                   "type": "frame",
                   "id": "0t2we",
                   "name": "badge",
-                  "fill": "$bg-surface",
+                  "fill": "#1E293B",
                   "cornerRadius": 100,
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#22D3EE33"
-                  },
+                  "stroke": "#22D3EE33",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "gap": 8,
                   "padding": [
                     8,
@@ -5000,7 +4988,7 @@
                   "type": "text",
                   "id": "6sZzO",
                   "name": "name",
-                  "fill": "$text-primary",
+                  "fill": "#FFFFFF",
                   "content": "Nguyen Ngoc Binh",
                   "fontFamily": "Inter",
                   "fontSize": 36,
@@ -5038,13 +5026,14 @@
                   "type": "text",
                   "id": "jm6hV",
                   "name": "tagline",
-                  "fill": "$text-secondary",
+                  "fill": "#94A3B8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "Building Mobile Experiences with Design Thinking & AI",
                   "lineHeight": 1.6,
                   "fontFamily": "Inter",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -5099,32 +5088,31 @@
                   "fill": {
                     "type": "image",
                     "enabled": true,
-                    "url": "./images/generated-1772982414332.png",
+                    "url": "images/generated-1772982414332.png",
                     "mode": "fill"
                   },
                   "cornerRadius": 90,
                   "stroke": {
-                    "thickness": 2,
-                    "fill": {
-                      "type": "gradient",
-                      "gradientType": "linear",
-                      "enabled": true,
-                      "rotation": 135,
-                      "size": {
-                        "height": 1
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 135,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#22D3EE",
+                        "position": 0
                       },
-                      "colors": [
-                        {
-                          "color": "#22D3EE",
-                          "position": 0
-                        },
-                        {
-                          "color": "#7C3AED",
-                          "position": 1
-                        }
-                      ]
-                    }
-                  }
+                      {
+                        "color": "#7C3AED",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner"
                 }
               ]
             }
@@ -5170,13 +5158,14 @@
                   "type": "text",
                   "id": "kzfsA",
                   "name": "bio",
-                  "fill": "$text-secondary",
+                  "fill": "#94A3B8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "With 10+ years of experience in mobile development, I bridge the gap between design and engineering. My background in Graphic Design and UX combined with deep technical expertise in Kotlin, Swift, and cross-platform frameworks allows me to build products that are both beautiful and performant.\n\nCurrently at Giao Hang Nhanh, I lead mobile initiatives that serve 20,000+ users, building scalable architectures and leveraging AI tools to accelerate development workflows.",
                   "lineHeight": 1.7,
                   "fontFamily": "Inter",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -5275,7 +5264,7 @@
           "id": "0RRuk",
           "name": "AI-First Mindset Section",
           "width": "fill_container",
-          "fill": "$bg-surface",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 32,
           "padding": [
@@ -5312,12 +5301,10 @@
                   "id": "y6XP6",
                   "name": "card-claude",
                   "width": "fill_container",
-                  "fill": "$bg-secondary",
-                  "cornerRadius": "$radius-lg",
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#22D3EE22"
-                  },
+                  "fill": "#1E293B",
+                  "stroke": "#22D3EE22",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
@@ -5326,20 +5313,20 @@
                   ],
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "YpimM",
                       "name": "icon",
                       "width": 32,
                       "height": 32,
-                      "iconFontName": "terminal",
-                      "iconFontFamily": "lucide",
+                      "icon": "terminal",
+                      "library": "lucide",
                       "fill": "#22D3EE"
                     },
                     {
                       "type": "text",
                       "id": "35KPA",
                       "name": "title",
-                      "fill": "$text-primary",
+                      "fill": "#FFFFFF",
                       "content": "Claude Code",
                       "fontFamily": "Inter",
                       "fontSize": 18,
@@ -5349,13 +5336,14 @@
                       "type": "text",
                       "id": "K5DZ8",
                       "name": "desc",
-                      "fill": "$text-secondary",
+                      "fill": "#94A3B8",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "AI-powered pair programming for architecture design, code review, and automated testing workflows",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -5364,12 +5352,10 @@
                   "id": "xo5OW",
                   "name": "card-cursor",
                   "width": "fill_container",
-                  "fill": "$bg-secondary",
-                  "cornerRadius": "$radius-lg",
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#7C3AED22"
-                  },
+                  "fill": "#1E293B",
+                  "stroke": "#7C3AED22",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
@@ -5378,20 +5364,20 @@
                   ],
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "Ycdkr",
                       "name": "icon",
                       "width": 32,
                       "height": 32,
-                      "iconFontName": "code",
-                      "iconFontFamily": "lucide",
+                      "icon": "code",
+                      "library": "lucide",
                       "fill": "#7C3AED"
                     },
                     {
                       "type": "text",
                       "id": "nqpBs",
                       "name": "title",
-                      "fill": "$text-primary",
+                      "fill": "#FFFFFF",
                       "content": "Cursor IDE",
                       "fontFamily": "Inter",
                       "fontSize": 18,
@@ -5401,13 +5387,14 @@
                       "type": "text",
                       "id": "I4iWM",
                       "name": "desc",
-                      "fill": "$text-secondary",
+                      "fill": "#94A3B8",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "AI-native IDE for rapid prototyping, intelligent code completion, and context-aware refactoring",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -5416,12 +5403,10 @@
                   "id": "TUe2f",
                   "name": "card-gemini",
                   "width": "fill_container",
-                  "fill": "$bg-secondary",
-                  "cornerRadius": "$radius-lg",
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#F59E0B22"
-                  },
+                  "fill": "#1E293B",
+                  "stroke": "#F59E0B22",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
@@ -5430,20 +5415,20 @@
                   ],
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "xfUeJ",
                       "name": "icon",
                       "width": 32,
                       "height": 32,
-                      "iconFontName": "brain",
-                      "iconFontFamily": "lucide",
+                      "icon": "brain",
+                      "library": "lucide",
                       "fill": "#F59E0B"
                     },
                     {
                       "type": "text",
                       "id": "yWgeo",
                       "name": "title",
-                      "fill": "$text-primary",
+                      "fill": "#FFFFFF",
                       "content": "Gemini & ChatGPT",
                       "fontFamily": "Inter",
                       "fontSize": 18,
@@ -5453,13 +5438,14 @@
                       "type": "text",
                       "id": "8rdWw",
                       "name": "desc",
-                      "fill": "$text-secondary",
+                      "fill": "#94A3B8",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Multi-model approach for research, documentation, problem-solving, and development acceleration",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -5472,7 +5458,7 @@
           "id": "EkNhG",
           "name": "Experience Section",
           "width": "fill_container",
-          "fill": "$bg-surface",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 32,
           "padding": [
@@ -5667,10 +5653,9 @@
                               "name": "chip-kmp",
                               "fill": "#1E293B",
                               "cornerRadius": 100,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "#F59E0B"
-                              },
+                              "stroke": "#F59E0B",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "gap": 6,
                               "padding": [
                                 6,
@@ -5679,13 +5664,13 @@
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
+                                  "type": "icon",
                                   "id": "4PoCR",
                                   "name": "icon",
                                   "width": 14,
                                   "height": 14,
-                                  "iconFontName": "smartphone",
-                                  "iconFontFamily": "lucide",
+                                  "icon": "smartphone",
+                                  "library": "lucide",
                                   "fill": "#F59E0B"
                                 },
                                 {
@@ -5706,10 +5691,9 @@
                               "name": "chip-swiftui",
                               "fill": "#1E293B",
                               "cornerRadius": 100,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "#F59E0B"
-                              },
+                              "stroke": "#F59E0B",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "gap": 6,
                               "padding": [
                                 6,
@@ -5718,13 +5702,13 @@
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
+                                  "type": "icon",
                                   "id": "gk2Fy",
                                   "name": "icon",
                                   "width": 14,
                                   "height": 14,
-                                  "iconFontName": "monitor-smartphone",
-                                  "iconFontFamily": "lucide",
+                                  "icon": "monitor-smartphone",
+                                  "library": "lucide",
                                   "fill": "#F59E0B"
                                 },
                                 {
@@ -5753,10 +5737,9 @@
                               "name": "chip-rn",
                               "fill": "#1E293B",
                               "cornerRadius": 100,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "#F59E0B"
-                              },
+                              "stroke": "#F59E0B",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "gap": 6,
                               "padding": [
                                 6,
@@ -5765,13 +5748,13 @@
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
+                                  "type": "icon",
                                   "id": "IDx9M",
                                   "name": "icon",
                                   "width": 14,
                                   "height": 14,
-                                  "iconFontName": "code",
-                                  "iconFontFamily": "lucide",
+                                  "icon": "code",
+                                  "library": "lucide",
                                   "fill": "#F59E0B"
                                 },
                                 {
@@ -5800,10 +5783,9 @@
                               "name": "chip-compose",
                               "fill": "#1E293B",
                               "cornerRadius": 100,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "#F59E0B"
-                              },
+                              "stroke": "#F59E0B",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "gap": 6,
                               "padding": [
                                 6,
@@ -5812,13 +5794,13 @@
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
+                                  "type": "icon",
                                   "id": "DnziS",
                                   "name": "icon",
                                   "width": 14,
                                   "height": 14,
-                                  "iconFontName": "layers",
-                                  "iconFontFamily": "lucide",
+                                  "icon": "layers",
+                                  "library": "lucide",
                                   "fill": "#F59E0B"
                                 },
                                 {
@@ -5839,10 +5821,9 @@
                               "name": "chip-ai",
                               "fill": "#1E293B",
                               "cornerRadius": 100,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "#F59E0B"
-                              },
+                              "stroke": "#F59E0B",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "gap": 6,
                               "padding": [
                                 6,
@@ -5851,13 +5832,13 @@
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
+                                  "type": "icon",
                                   "id": "56cJW",
                                   "name": "icon",
                                   "width": 14,
                                   "height": 14,
-                                  "iconFontName": "brain",
-                                  "iconFontFamily": "lucide",
+                                  "icon": "brain",
+                                  "library": "lucide",
                                   "fill": "#F59E0B"
                                 },
                                 {
@@ -6223,7 +6204,7 @@
           "id": "mo1N0",
           "name": "Projects Section",
           "width": "fill_container",
-          "fill": "$bg-surface",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 32,
           "padding": [
@@ -6608,7 +6589,7 @@
           "id": "dzmpy",
           "name": "Footer",
           "width": "fill_container",
-          "fill": "$bg-secondary",
+          "fill": "#0F172A",
           "layout": "vertical",
           "gap": 24,
           "padding": [
@@ -6625,44 +6606,44 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "5eVBg",
                   "name": "linkedin",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "linkedin",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "linkedin",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 },
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "2aQ24",
                   "name": "github",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "github",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "github",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 },
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "pNoHx",
                   "name": "email",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "mail",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "mail",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 },
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "DtmO7",
                   "name": "phone",
                   "width": 22,
                   "height": 22,
-                  "iconFontName": "phone",
-                  "iconFontFamily": "lucide",
-                  "fill": "$text-secondary"
+                  "icon": "phone",
+                  "library": "lucide",
+                  "fill": "#64748B"
                 }
               ]
             },
@@ -6670,7 +6651,7 @@
               "type": "rectangle",
               "id": "oOTox",
               "name": "divider",
-              "fill": "$border-default",
+              "fill": "#1E293B",
               "width": "fill_container",
               "height": 1
             },
@@ -6678,11 +6659,12 @@
               "type": "text",
               "id": "3S0cX",
               "name": "copyright",
-              "fill": "$text-muted",
+              "fill": "#94A3B8",
               "content": "© 2026 Nguyen Ngoc Binh. Built with passion & code.",
               "textAlign": "center",
               "fontFamily": "Inter",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             }
           ]
         }
@@ -6699,7 +6681,7 @@
       "fill": {
         "type": "image",
         "enabled": true,
-        "url": "./images/generated-1772982414332.png",
+        "url": "images/generated-1772982414332.png",
         "mode": "fill"
       },
       "cornerRadius": 24
@@ -6911,5 +6893,8 @@
       "type": "color",
       "value": "#F59E0B"
     }
+  },
+  "imports": {
+    "lib": "design-system.lib.pen"
   }
 }

@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 640px;
+}
+
+.header[data-align='center'] {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.accentLine {
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--gradient-accent);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: clamp(15px, 2.5vw, 18px);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
