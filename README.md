@@ -1,16 +1,40 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio cá nhân của Nguyen Ngoc Binh — Senior Mobile Solution Developer.
 
-Currently, two official plugins are available:
+**Live site:** https://ngocbinh123.github.io/my-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dự án React + Vite, deploy miễn phí qua GitHub Pages bằng GitHub Actions.
 
-## React Compiler
+## Phát triển
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev        # chạy local tại http://localhost:5173/my-portfolio/
+npm run build      # build production vào ./dist
+npm run preview    # preview bản build
+npm run lint       # chạy ESLint
+```
 
-## Expanding the ESLint configuration
+## Deploy
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Mỗi lần push lên nhánh `master`, workflow `.github/workflows/deploy.yml` sẽ:
+
+1. Cài dependencies (`npm ci`)
+2. Build site (`npm run build`)
+3. Upload artifact từ `./dist`
+4. Deploy lên GitHub Pages (environment `github-pages`)
+
+Có thể trigger thủ công từ tab **Actions** → **Deploy to GitHub Pages** → **Run workflow**.
+
+### Yêu cầu cấu hình một lần trên GitHub
+
+- Repo **Settings → Pages**: Source = **GitHub Actions**.
+- Workflow đã có quyền `pages: write` và `id-token: write`, không cần token bên ngoài.
+
+### Base path & SPA routing
+
+- `vite.config.js` set `base: '/my-portfolio/'` để asset trỏ đúng dưới subpath của GitHub Pages.
+- `public/404.html` + script giải mã trong `index.html` cho phép refresh / deep-link React Router hoạt động bình thường trên GitHub Pages (kỹ thuật `spa-github-pages`).
+
+Nếu đổi tên repo, nhớ cập nhật `base` trong `vite.config.js` và `pathSegmentsToKeep` trong `public/404.html` cho khớp.
