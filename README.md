@@ -1,16 +1,48 @@
-# React + Vite
+# my-portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with React + Vite, deployed for free on **GitHub Pages**.
 
-Currently, two official plugins are available:
+**Live site:** https://ngocbinh123.github.io/my-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Local development
 
-## React Compiler
+```bash
+npm install
+npm run dev      # start Vite dev server
+npm run build    # build to ./dist
+npm run preview  # preview the production build locally
+npm run lint     # run eslint
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Deployment (GitHub Pages — free)
 
-## Expanding the ESLint configuration
+Deployment is fully automated via GitHub Actions (`.github/workflows/deploy.yml`):
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Every push to `master` triggers a build and publishes `./dist` to GitHub Pages.
+- Manual re-deploys are available from the Actions tab (**Deploy to GitHub Pages → Run workflow**).
+
+### One-time setup on GitHub
+
+The workflow calls `actions/configure-pages@v5` with `enablement: true`, so Pages
+is turned on automatically on first run. If you ever need to do it by hand:
+
+1. Open the repository **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+
+### How single-page routing works on GitHub Pages
+
+GitHub Pages serves static files only, so a direct hit on a deep link such as
+`/my-portfolio/about` would return 404. The project uses the standard
+[spa-github-pages](https://github.com/rafgraph/spa-github-pages) trick:
+
+- `public/404.html` catches unknown paths and redirects to the app root with the
+  original path encoded in the query string.
+- A small inline script in `index.html` decodes it with `history.replaceState`
+  before React Router boots, so deep links and refreshes resolve correctly.
+
+### Base path
+
+The project is served from a sub-path (`/my-portfolio/`), set via
+[`base`](https://vite.dev/config/shared-options.html#base) in `vite.config.js`.
+If you fork this repo under a different name, update that `base` to match the
+new repo name (or `/` for a user/organization site).
