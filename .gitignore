@@ -13,6 +13,9 @@ dist
 dist-ssr
 *.local
 
+# Local-only screenshots used for previewing the site
+screenshots/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
