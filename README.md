@@ -1,16 +1,42 @@
-# React + Vite
+# my-portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nguyen Ngoc Binh — Senior Mobile Solution Developer. Single-page React portfolio built with Vite.
 
-Currently, two official plugins are available:
+## Live site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**https://ngocbinh123.github.io/my-portfolio/**
 
-## React Compiler
+Deployed free on GitHub Pages. Every push to `master` publishes a new version automatically.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local development
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev       # start the dev server
+npm run build     # production build (outputs to dist/)
+npm run preview   # preview the production build locally
+npm run lint      # eslint
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Node 22+ is recommended (CI uses Node 22).
+
+## How the deployment works
+
+The site is hosted on **GitHub Pages** at the project path `/my-portfolio/`, using only features GitHub provides for free.
+
+- **Workflow** — `.github/workflows/deploy.yml` runs on every push to `master`:
+  1. `npm ci`
+  2. `npm run build`
+  3. uploads `dist/` as a Pages artifact and deploys it with `actions/deploy-pages`.
+  4. `actions/configure-pages` has `enablement: true`, so Pages is auto-enabled the first time it runs — no manual settings toggle needed.
+- **Base path** — `vite.config.js` sets `base: '/my-portfolio/'` so built asset URLs resolve correctly under the project page.
+- **Client-side routing** — React Router's `basename` reads `import.meta.env.BASE_URL`, which matches the Vite base. `public/404.html` + a tiny decoder in `index.html` implement the [spa-github-pages](https://github.com/rafgraph/spa-github-pages) trick so deep links and refreshes don't 404.
+
+## First-time setup (if you fork or rename)
+
+If you fork this repo or change its name, update the base path in two places so Pages still serves assets correctly:
+
+1. `vite.config.js` → `base: '/<new-repo-name>/'`
+2. `public/404.html` → `pathSegmentsToKeep = 1` (keep as-is for a project page; set to `0` only for a user/organization page served at the domain root).
+
+Then push to `master`. The workflow enables Pages automatically on the first successful run; the live URL will be printed in the workflow's `deploy` job output.
