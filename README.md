@@ -1,16 +1,48 @@
-# React + Vite
+# my-portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site built with React + Vite, deployed to GitHub Pages
+for free out of the GitHub Actions runner.
 
-Currently, two official plugins are available:
+**Live:** https://ngocbinh123.github.io/my-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Local development
 
-## React Compiler
+```bash
+npm install
+npm run dev        # start the dev server on http://localhost:5173/my-portfolio/
+npm run lint       # ESLint
+npm run build      # production build into dist/
+npm run preview    # serve the production build locally
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Node 22 is used in CI; any recent LTS works locally.
 
-## Expanding the ESLint configuration
+## How the GitHub Pages deployment is wired
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Everything the deploy needs lives in this repo. There is no external host
+and no paid service — the Actions runner builds the site and uploads it
+to GitHub Pages.
+
+- `vite.config.js` sets `base: '/my-portfolio/'` so built asset URLs match
+  the project-pages path.
+- `src/router.jsx` passes `basename: import.meta.env.BASE_URL` so React
+  Router stays in sync with that base.
+- `public/404.html` and the small decoder in `index.html` are the
+  [spa-github-pages](https://github.com/rafgraph/spa-github-pages) trick
+  that lets deep links and refreshes work on a static host that has no
+  SPA fallback of its own.
+- `.github/workflows/deploy.yml` builds and publishes the site. It runs
+  on every push to `master`, and can also be re-run on demand from the
+  Actions tab (`workflow_dispatch`).
+- `.github/workflows/ci.yml` runs lint + build on PRs targeting `master`
+  and on pushes to any non-`master` branch, so a broken build is caught
+  before it reaches the live site.
+
+## One-time repo setup
+
+In **Settings → Pages**, set **Source** to **GitHub Actions**. The deploy
+workflow already asks `actions/configure-pages` to enable Pages, but the
+source selector in Settings is the thing that tells GitHub to serve what
+Actions uploads. After that, every push to `master` deploys automatically.
+
+The deploy URL is also surfaced on each run's `deploy` job summary.
