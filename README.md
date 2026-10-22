@@ -1,16 +1,50 @@
-# React + Vite
+# my-portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio site for Nguyen Ngoc Binh — built with React + Vite, deployed free on GitHub Pages.
 
-Currently, two official plugins are available:
+**Live site:** https://ngocbinh123.github.io/my-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How deployment works
 
-## React Compiler
+Every push to `master` runs `.github/workflows/deploy.yml`, which:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Installs dependencies with `npm ci`
+2. Builds the site with `npm run build` (output goes to `dist/`)
+3. Uploads `dist/` as a Pages artifact and publishes it via `actions/deploy-pages`
 
-## Expanding the ESLint configuration
+The workflow also exposes `workflow_dispatch`, so you can trigger a redeploy
+from the GitHub Actions tab without pushing a commit.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### One-time GitHub Pages setup
+
+In the repository on github.com:
+
+1. **Settings → Pages → Build and deployment → Source**: pick **GitHub Actions**
+2. **Settings → Actions → General → Workflow permissions**: allow **Read and write**
+   (needed for the `pages: write` / `id-token: write` grants in the workflow)
+
+That's it — the next push to `master` publishes the site.
+
+### Pages-specific details already configured
+
+- `vite.config.js` sets `base: '/my-portfolio/'` so built asset URLs include
+  the repo subpath Pages serves from.
+- `src/router.jsx` uses `import.meta.env.BASE_URL` as the React Router basename,
+  so routes stay correct on the Pages subpath.
+- `public/404.html` + a decoder in `index.html` implement the standard
+  [spa-github-pages](https://github.com/rafgraph/spa-github-pages) trick so
+  deep links and hard refreshes resolve to the SPA instead of a 404.
+
+If you rename the repository, update `base` in `vite.config.js` to match the
+new repo name (e.g. `base: '/<new-name>/'`) and `pathSegmentsToKeep` in
+`public/404.html` stays at `1`.
+
+## Local development
+
+```bash
+npm install
+npm run dev      # start Vite dev server
+npm run build    # production build into dist/
+npm run preview  # serve the built dist/ locally
+npm run lint     # run ESLint
+```
