@@ -1,16 +1,39 @@
-# React + Vite
+# Nguyen Ngoc Binh — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Single-page React + Vite portfolio, deployed free to GitHub Pages.
 
-Currently, two official plugins are available:
+**Live site:** https://ngocbinh123.github.io/my-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Development
 
-## React Compiler
+```bash
+npm install
+npm run dev      # start Vite dev server
+npm run lint     # run ESLint
+npm run build    # production build into ./dist
+npm run preview  # preview the production build locally
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Deployment (GitHub Pages)
 
-## Expanding the ESLint configuration
+Deployment is fully automated and runs on GitHub's free tier.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Workflow:** `.github/workflows/deploy.yml`
+- **Trigger:** every push to `master`, or manually from the Actions tab (**Run workflow**).
+- **Pipeline:** installs deps → `npm run build` → uploads `./dist` as a Pages artifact → deploys via `actions/deploy-pages`.
+- **Pages enablement:** the workflow sets `enablement: true` via `actions/configure-pages`, so no manual click in repo settings is required the first time.
+
+### One-time repo settings
+
+In **Settings → Pages**, confirm:
+
+- **Source:** _GitHub Actions_ (not "Deploy from a branch").
+- The site URL that appears there is the one above.
+
+### SPA routing
+
+React Router runs in `createBrowserRouter` mode with the base path `'/my-portfolio/'` (matches `vite.config.js` `base`). A `public/404.html` + decoder in `index.html` restore deep links on refresh (standard `rafgraph/spa-github-pages` technique).
+
+## Pull-request checks
+
+`.github/workflows/ci.yml` runs `npm ci`, `npm run lint`, and `npm run build` on every pull request to `master` and on pushes to non-master branches, so broken code never lands on the deploying branch.
