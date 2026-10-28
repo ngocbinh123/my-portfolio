@@ -1,16 +1,48 @@
-# React + Vite
+# my-portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Trang portfolio cá nhân của **Nguyen Ngoc Binh**, build bằng [React](https://react.dev/) + [Vite](https://vite.dev/) và deploy miễn phí lên [GitHub Pages](https://pages.github.com/).
 
-Currently, two official plugins are available:
+**Live site:** https://ngocbinh123.github.io/my-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Phát triển local
 
-## React Compiler
+```bash
+npm install        # cài dependencies
+npm run dev        # chạy dev server (http://localhost:5173/my-portfolio/)
+npm run build      # build production vào ./dist
+npm run preview    # preview bản build
+npm run lint       # chạy ESLint
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Deploy lên GitHub Pages
 
-## Expanding the ESLint configuration
+Dự án tận dụng toàn bộ hạ tầng miễn phí mà GitHub cung cấp:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **GitHub Actions** (free cho public repo) build site mỗi lần có push.
+- **GitHub Pages** host static site miễn phí trên domain `*.github.io`.
+- **Deploy workflow** nằm ở [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+
+### Thiết lập một lần
+
+1. Vào **GitHub repo → Settings → Pages**.
+2. Ở mục **Build and deployment → Source**, chọn **GitHub Actions**.
+3. Chọn **Save**. Lần build tiếp theo sẽ xuất hiện ngay trên tab **Actions**.
+
+> Repo đã bật `actions/configure-pages` với `enablement: true` nên Pages sẽ tự bật ở lần chạy workflow đầu tiên nếu tài khoản/tổ chức cho phép.
+
+### Cách kích hoạt deploy
+
+| Cách | Khi nào dùng |
+| --- | --- |
+| Push lên branch `master` (hoặc `main`) | Deploy tự động khi merge PR về nhánh chính. |
+| Vào tab **Actions → Deploy to GitHub Pages → Run workflow** | Deploy thủ công bất kỳ lúc nào (nhờ `workflow_dispatch`). |
+
+Sau khi job `deploy` chạy xong, link site sẽ hiện ở màn hình Actions và ở **Settings → Pages**.
+
+### Cấu hình liên quan
+
+- `vite.config.js` đặt `base: '/my-portfolio/'` khớp với tên repo để assets có đường dẫn đúng.
+- `src/router.jsx` dùng `basename: import.meta.env.BASE_URL` cho React Router.
+- `public/404.html` + script trong `index.html` xử lý SPA refresh / deep link kiểu [spa-github-pages](https://github.com/rafgraph/spa-github-pages), nên refresh trên `/my-portfolio/<anything>` vẫn load đúng route.
+
+Nếu đổi tên repo, nhớ đổi lại `base` trong `vite.config.js` và `pathSegmentsToKeep` trong `public/404.html` cho khớp.
