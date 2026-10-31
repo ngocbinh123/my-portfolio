@@ -1,16 +1,55 @@
-# React + Vite
+# my-portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site for **Nguyen Ngoc Binh** — Senior Mobile Solution Developer.
+Built with React + Vite and deployed free on GitHub Pages.
 
-Currently, two official plugins are available:
+**Live site:** https://ngocbinh123.github.io/my-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Local development
 
-## React Compiler
+Requires Node.js 22+.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev        # start dev server at http://localhost:5173
+npm run build      # production build into ./dist
+npm run preview    # preview the production build locally
+npm run lint       # run eslint
+```
 
-## Expanding the ESLint configuration
+## Deployment (free, via GitHub Pages)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Every push to `master` is built and published automatically by
+[`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) using the
+official `actions/deploy-pages` action, which runs on GitHub's free tier for
+public repositories.
+
+- Pull requests to `master` also trigger a build (verification only, no deploy),
+  so a broken build is caught before merge.
+- The workflow can also be triggered manually from the Actions tab
+  (`workflow_dispatch`).
+
+### One-time GitHub setup
+
+If you fork or re-create this repo, enable Pages once:
+
+1. Open **Settings → Pages**.
+2. Under **Build and deployment → Source**, select **GitHub Actions**.
+3. Push to `master` (or run the workflow manually) — the site publishes to
+   `https://<user>.github.io/<repo>/`.
+
+### Project base path
+
+`vite.config.js` sets `base: '/my-portfolio/'` so built asset URLs resolve under
+the repository name on GitHub Pages. If you rename the repository, update that
+value to match.
+
+### SPA deep links
+
+`public/404.html` plus the small decoder script in `index.html` restore deep
+links / page refreshes under React Router on GitHub Pages (based on
+[rafgraph/spa-github-pages](https://github.com/rafgraph/spa-github-pages)).
+
+## License
+
+See [LICENSE](./LICENSE).
