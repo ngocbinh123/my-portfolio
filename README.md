@@ -1,16 +1,45 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Deploy to GitHub Pages](https://github.com/ngocbinh123/my-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/ngocbinh123/my-portfolio/actions/workflows/deploy.yml)
+[![CI](https://github.com/ngocbinh123/my-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/ngocbinh123/my-portfolio/actions/workflows/ci.yml)
 
-Currently, two official plugins are available:
+Personal portfolio site for **Nguyen Ngoc Binh** — Senior Mobile Solution Developer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live site:** https://ngocbinh123.github.io/my-portfolio/
 
-## React Compiler
+Built with React + Vite, deployed free on GitHub Pages via GitHub Actions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local development
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev        # start Vite dev server
+npm run lint       # run ESLint
+npm run build      # production build into dist/
+npm run preview    # preview the production build locally
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Node 22 is used in CI (see `.github/workflows/`).
+
+## Deployment
+
+Deploys happen automatically on every push to `master`:
+
+1. `.github/workflows/deploy.yml` builds the Vite app and publishes `dist/` to GitHub Pages.
+2. The site is served at `https://ngocbinh123.github.io/my-portfolio/`.
+3. `vite.config.js` sets `base: '/my-portfolio/'` so asset paths resolve under the project sub-path.
+4. `public/404.html` + the SPA decoder in `index.html` make React Router deep links survive refresh on GitHub Pages (see https://github.com/rafgraph/spa-github-pages).
+
+To trigger a deploy without a code change, use **Actions → Deploy to GitHub Pages → Run workflow** on GitHub.
+
+## Enabling GitHub Pages (one-time)
+
+If the Pages site is not live yet, enable it once in the repo:
+
+1. Go to **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. Push to `master` (or run the workflow manually) — the next run will publish the site.
+
+## CI
+
+`.github/workflows/ci.yml` runs lint + build on pull requests and non-`master` branches, so broken builds get caught before they can reach the live site.
