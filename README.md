@@ -1,16 +1,45 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Deploy to GitHub Pages](https://github.com/ngocbinh123/my-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/ngocbinh123/my-portfolio/actions/workflows/deploy.yml)
 
-Currently, two official plugins are available:
+**Live site:** https://ngocbinh123.github.io/my-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Personal portfolio built with React 19 + Vite. Dark/light themes, single-page landing, responsive layout, CV download.
 
-## React Compiler
+## Scripts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install     # install dependencies
+npm run dev     # run dev server at http://localhost:5173
+npm run lint    # eslint
+npm run build   # production bundle to dist/
+npm run preview # preview the production build locally
+```
 
-## Expanding the ESLint configuration
+Requires Node >= 20.19 (Vite 7).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deploy (GitHub Pages — free)
+
+Hosting, CI, and TLS are all provided for free by GitHub. The
+`.github/workflows/deploy.yml` workflow builds the site with Vite and
+publishes `dist/` to GitHub Pages.
+
+It runs on:
+- Every push to `master` (automatic deploy).
+- Manual trigger from the **Actions** tab → *Deploy to GitHub Pages* → *Run workflow* (`workflow_dispatch`).
+
+One-time Pages setup (already done on this repo — repeat if you fork):
+
+1. Repo → **Settings** → **Pages** → *Build and deployment* → **Source: GitHub Actions**.
+2. Confirm the deploy workflow has *Read and write* permissions in **Settings → Actions → General → Workflow permissions**.
+3. Push to `master` (or trigger the workflow manually). The published URL is shown in the workflow summary under the `deploy` job.
+
+### Project base path
+
+`vite.config.js` sets `base: '/my-portfolio/'` so assets resolve under
+`https://<user>.github.io/my-portfolio/`. The React Router `basename` is
+bound to `import.meta.env.BASE_URL`, so deep links work.
+
+For SPA refresh / deep links, `public/404.html` + the small redirect
+decoder in `index.html` implement the standard GitHub Pages SPA trick
+(rafgraph/spa-github-pages).
