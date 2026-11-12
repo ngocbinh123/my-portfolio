@@ -1,16 +1,59 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Single-page React portfolio site for Nguyen Ngoc Binh — Senior Mobile Solution Developer.
 
-Currently, two official plugins are available:
+**Live site:** https://ngocbinh123.github.io/my-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built with [Vite](https://vite.dev/) + [React](https://react.dev/) and deployed free of charge on [GitHub Pages](https://pages.github.com/) via GitHub Actions.
 
-## React Compiler
+## Local development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev       # start the dev server (http://localhost:5173)
+npm run build     # production build into ./dist
+npm run preview   # serve the built output locally
+npm run lint      # run ESLint over src/
+```
 
-## Expanding the ESLint configuration
+Node.js 22 or newer is required (matches the CI runtime).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deployment — free on GitHub Pages
+
+Every push to `master` is built and published automatically by
+`.github/workflows/deploy.yml`:
+
+1. Checks out the repo and installs dependencies with `npm ci`.
+2. Runs `npm run build`, producing `./dist`.
+3. Uploads `./dist` as a Pages artifact and deploys it with
+   `actions/deploy-pages@v4`.
+
+GitHub Pages is enabled automatically by the workflow
+(`actions/configure-pages@v5` with `enablement: true`), so no manual toggle is
+needed in the repository settings.
+
+The workflow can also be triggered on demand from the **Actions** tab in GitHub
+(`Deploy to GitHub Pages` → `Run workflow`).
+
+### SPA routing on Pages
+
+GitHub Pages serves static files, so a deep-link refresh would normally 404.
+Two small pieces make the React Router SPA work correctly:
+
+- `public/404.html` — encodes the requested path into a query string and
+  redirects to the app root.
+- The inline script at the top of `index.html` — decodes that query string
+  back into the real URL via `history.replaceState` before React Router boots.
+
+### Base path
+
+`vite.config.js` sets `base: '/my-portfolio/'` so built asset URLs point at the
+project subpath on `ngocbinh123.github.io`. `src/router.jsx` picks the same
+value up through `import.meta.env.BASE_URL` for React Router.
+
+## Continuous integration
+
+`.github/workflows/ci.yml` runs on every pull request to `master` (and on
+pushes to non-master branches), executing `npm ci`, `npm run lint`, and
+`npm run build`, so a broken change is caught before it reaches the live
+site.
